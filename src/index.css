@@ -1,13 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+@import url(//db.onlinewebfonts.com/c/7499e6db8c3194992131b7d2309f992a?family=GT+America+Expanded);
+@font-face {font-family: "GT America Expanded"; src: url("//db.onlinewebfonts.com/t/7499e6db8c3194992131b7d2309f992a.eot"); src: url("//db.onlinewebfonts.com/t/7499e6db8c3194992131b7d2309f992a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7499e6db8c3194992131b7d2309f992a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7499e6db8c3194992131b7d2309f992a.woff") format("woff"), url("//db.onlinewebfonts.com/t/7499e6db8c3194992131b7d2309f992a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7499e6db8c3194992131b7d2309f992a.svg#GT America Expanded") format("svg"); }
+
+:root {
+  --dgr: #149487;
+  --lgr: #48B9B0;
+  --db: #727070;
+  --mb: #919191;
+  --lb: #B3B2B2;
+  --d: #1e1e1e;
+  --dye: #C88A3E;
+  --lye: #E1B67E;
+  --l: #F6F6F6;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: var(--d); */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Nunito', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.ver-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.nuinto {
+  font-family: 'Nunito';
+}
+
+.america {
+  font-family: "GT America Expanded";
+}
+
+.trans {
+  transition: .25s;
+}
+
+.arrow {
+  animation: showup .25s alternate;
+}
+
+@keyframes showup {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.navbar {
+  animation: .5s anim-lineLeft ease-out;
+}
+@keyframes anim-lineLeft {
+    from {
+      transform: translateX(80%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+.title {
+  animation: .5s anim-lineLeftTitle ease-out;
+}
+@keyframes anim-lineLeftTitle {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      transform: translateX(-80%);
+      opacity: 0;
+      display: none;
+    }
+  }
+
+.anim-op {
+  animation: 1s anim-opacity ease-out;
+}
+@keyframes anim-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.anim-upcoming {
+  animation: .5s anim-upcoming ease-out;
+}
+@keyframes anim-upcoming {
+  from {
+    transform: translateX(-80%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.inner-shadow {
+  box-shadow: 0px -130px 30px -15px black inset;
+}
+
+.anim-scale {
+  animation: anim-scale 750ms infinite linear;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+@keyframes anim-scale {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(3);
+  }
 }
